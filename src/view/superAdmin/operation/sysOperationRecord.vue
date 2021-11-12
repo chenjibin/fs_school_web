@@ -61,7 +61,7 @@
         <el-table-column align="left" label="请求" prop="path" width="80">
           <template #default="scope">
             <div>
-              <el-popover v-if="scope.row.body" placement="top-start" trigger="hover">
+              <el-popover v-if="scope.row.body" trigger="hover" :popper-options="{ boundariesElement: 'body', gpuAcceleration: false }">
                 <div class="popover-box">
                   <pre>{{ fmtBody(scope.row.body) }}</pre>
                 </div>
@@ -77,7 +77,7 @@
         <el-table-column align="left" label="响应" prop="path" width="80">
           <template #default="scope">
             <div>
-              <el-popover v-if="scope.row.resp" placement="top-start" trigger="hover">
+              <el-popover v-if="scope.row.resp" trigger="hover">
                 <div class="popover-box">
                   <pre>{{ fmtBody(scope.row.resp) }}</pre>
                 </div>
@@ -91,7 +91,7 @@
         </el-table-column>
         <el-table-column align="left" label="按钮组">
           <template #default="scope">
-            <el-popover :visible="scope.row.visible" placement="top" width="160">
+            <el-popover :visible="scope.row.visible" width="160">
               <p>确定要删除吗？</p>
               <div style="text-align: right; margin-top: 8px;">
                 <el-button size="mini" type="text" @click="scope.row.visible = false">取消</el-button>

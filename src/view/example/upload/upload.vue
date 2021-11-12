@@ -74,6 +74,7 @@ import { getFileList, deleteFile } from '@/api/fileUploadAndDownload'
 import { downloadImage } from '@/utils/downloadImg'
 import CustomPic from '@/components/customPic/index.vue'
 import UploadImage from '@/components/upload/image.vue'
+console.log(path)
 export default {
   name: 'Upload',
   components: {
